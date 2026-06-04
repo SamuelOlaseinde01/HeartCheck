@@ -8,7 +8,15 @@ export default function Layout() {
   return (
     <main className="layout">
       <header>
-        <h3>Heart</h3>
+        <h3>
+          <HashLink
+            smooth
+            to="/"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            HeartCheck
+          </HashLink>
+        </h3>
         <nav>
           {/* Changed back to HashLink so smooth scrolling works */}
           <HashLink smooth to="/">
