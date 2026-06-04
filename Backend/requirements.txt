@@ -3,4 +3,5 @@ uvicorn==0.30.1
 xgboost
 pandas     # (Add this if you 'import pandas' anywhere)
 numpy      # (Add this if you 'import numpy' anywhere)
-scikit-learn # (Add this if you use standard scalers or sklearn models)
+scikit-learn
+google # (Add this if you use standard scalers or sklearn models)
