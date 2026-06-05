@@ -24,6 +24,7 @@ const FeatureImportanceChart = ({ data }) => {
         borderRadius: "12px",
         paddingBottom: "70px",
         margin: "30px 0",
+        outline: "none",
       }}
     >
       <h3
@@ -32,7 +33,11 @@ const FeatureImportanceChart = ({ data }) => {
         What influenced this prediction?
       </h3>
 
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        style={{ outline: "none" }}
+      >
         <BarChart
           data={topFeatures}
           layout="vertical" // Makes it a horizontal bar chart
