@@ -2,6 +2,7 @@ import React from "react";
 import {
   BarChart,
   Bar,
+  Cell, // Make sure to import Cell
   XAxis,
   YAxis,
   CartesianGrid,
@@ -52,13 +53,15 @@ const FeatureImportanceChart = ({ data }) => {
             cursor={{ fill: "transparent" }}
           />
 
-          {/* Using a nice, clinical blue color */}
-          <Bar
-            dataKey="value"
-            fill="#3b82f6"
-            radius={[0, 4, 4, 0]}
-            barSize={24}
-          />
+          <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={24}>
+            {/* Map over the data to assign conditional colors */}
+            {topFeatures?.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={entry.value >= 0 ? "#10b981" : "#ef4444"} // Green for positive, Red for negative
+              />
+            ))}
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>
