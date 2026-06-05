@@ -21,7 +21,6 @@ export default function Results() {
   }
 
   const riskPercentage = (resultData.risk_score * 100).toFixed(1);
-  console.log(resultData);
 
   return (
     <div className={styles.resultContainer}>

@@ -142,7 +142,7 @@ nav {
   align-items: center;
   padding: 30px;
   gap: 5px;
-  box-shadow: 0px 3px 5px 5px rgb(239, 239, 239);
+  box-shadow: 0px 3px 5px 3px rgb(247, 247, 247);
   border-radius: 5px;
 }
 
@@ -160,6 +160,10 @@ nav {
   text-align: center;
   font-size: 0.95em;
   line-height: 30px;
+}
+
+.hamburger {
+  display: none;
 }
 
 footer {
@@ -262,4 +266,79 @@ select:focus {
 .recharts-wrapper,
 .recharts-surface {
   outline: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hamburger {
+    display: block;
+    width: 30px;
+    position: absolute;
+    /* Adjust these to perfectly center the icon vertically with your logo */
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100; /* Keeps the hamburger clickable above the menu */
+  }
+
+  .span1,
+  .span2,
+  .span3 {
+    width: 100%;
+    background-color: black;
+    height: 3px;
+    display: block;
+    margin: 5px auto;
+    transition: 300ms;
+  }
+
+  .span1.active {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .span2.active {
+    opacity: 0;
+  }
+  .span3.active {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Drops it perfectly below the header */
+    left: 0; /* Aligns it to the left edge */
+    width: 100%; /* Spans the full screen */
+    background-color: white; /* CRITICAL: prevents text from overlapping */
+    padding: 20px 0;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow */
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds spacing between your links */
+  }
+
+  /* Make sure the links are visible when nav is active */
+  nav.active > a {
+    display: block;
+  }
+
+  #section-home > .img-container {
+    display: none;
+  }
 }
