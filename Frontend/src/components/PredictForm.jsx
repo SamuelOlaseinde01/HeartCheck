@@ -441,7 +441,9 @@ export default function PredictForm() {
       {isModalOpen && (
         <div style={modalOverlayStyle}>
           <div style={modalContentStyle}>
-            <h2 style={{ marginTop: 0, color: "#d32f2f" }}>
+            <h2
+              style={{ marginTop: 0, color: "#d32f2f", marginBottom: "10px" }}
+            >
               ⚠️ Medical Disclaimer
             </h2>
             <p style={{ lineHeight: "1.5", color: "#333" }}>

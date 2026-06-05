@@ -262,10 +262,14 @@ select:focus {
   border: 1px solid #f5c2c7;
 }
 
-/* Removes the focus outline from Recharts wrappers and SVGs */
+/* Force-remove outlines from all Recharts elements */
 .recharts-wrapper,
-.recharts-surface {
+.recharts-surface,
+.recharts-wrapper *,
+.recharts-surface *:focus,
+.recharts-wrapper *:focus-visible {
   outline: none !important;
+  box-shadow: none !important;
 }
 
 @media screen and (max-width: 1000px) {

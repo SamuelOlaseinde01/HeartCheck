@@ -40,25 +40,29 @@ const FeatureImportanceChart = ({ data }) => {
       >
         <BarChart
           data={topFeatures}
-          layout="vertical" // Makes it a horizontal bar chart
-          margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
-          style={{ outline: "none" }}
+          layout="vertical"
+          // 1. Drastically reduce the left and right margins
+          margin={{ top: 5, right: 15, left: -20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-          {/* type="category" is required for text labels on the Y-axis */}
           <XAxis type="number" unit="%" hide />
+
           <YAxis
             dataKey="name"
             type="category"
-            width={100}
-            tick={{ fontSize: 14, fill: "#4b5563" }}
+            // 2. Reduce the reserved width for the text
+            width={89}
+            // 3. Shrink the font size slightly so long words still fit
+            tick={{ fontSize: 12, fill: "#4b5563" }}
           />
-
           <Tooltip
-            formatter={(value) => [`${value}%`, "Importance"]}
+            formatter={(value) => {
+              const formattedValue = Number(value).toFixed(3);
+              return [`${formattedValue}%`, "Importance"];
+            }}
             cursor={{ fill: "transparent" }}
+            wrapperStyle={{ transform: "translateY(-40px)" }}
           />
-
           <Bar
             dataKey="value"
             radius={[0, 4, 4, 0]}
