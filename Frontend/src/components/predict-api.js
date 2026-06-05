@@ -4,7 +4,7 @@ async function sleep(ms) {
 
 export async function predictRisk(patientData) {
   await sleep(1000);
-  const res = await fetch("http://127.0.0.1:8000/predict", {
+  const res = await fetch("https://heartcheck-mhyg.onrender.com/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
