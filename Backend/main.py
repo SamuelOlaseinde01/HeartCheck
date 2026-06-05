@@ -21,7 +21,7 @@ client = genai.Client(api_key=api_key)
 # Load your trained XGBoost model safely
 try:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+    MODEL_PATH = os.path.join(BASE_DIR, "cardio_risk_model5.pkl")
     model = joblib.load(MODEL_PATH)
 except Exception as e:
     print("Warning: Model file not found. Make sure cardio_risk_model.pkl is in this folder.")
