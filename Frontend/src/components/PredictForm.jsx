@@ -226,7 +226,7 @@ export default function PredictForm() {
   return (
     <div className="container">
       <div className="predict-form-container">
-        <h1>HEART DISEASE RISK PREDICTION</h1>
+        <h1 style={{ textAlign: "center" }}>HEART DISEASE RISK PREDICTION</h1>
 
         {/* Added onSubmit handler here */}
         <Form method="post" noValidate onSubmit={handleSubmit}>

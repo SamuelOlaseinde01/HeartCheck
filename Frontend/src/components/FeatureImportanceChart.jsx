@@ -42,6 +42,7 @@ const FeatureImportanceChart = ({ data }) => {
           data={topFeatures}
           layout="vertical" // Makes it a horizontal bar chart
           margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
+          style={{ outline: "none" }}
         >
           <CartesianGrid strokeDasharray="3 3" horizontal={false} />
           {/* type="category" is required for text labels on the Y-axis */}
@@ -58,7 +59,12 @@ const FeatureImportanceChart = ({ data }) => {
             cursor={{ fill: "transparent" }}
           />
 
-          <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={24}>
+          <Bar
+            dataKey="value"
+            radius={[0, 4, 4, 0]}
+            barSize={24}
+            style={{ outline: "none" }}
+          >
             {/* Map over the data to assign conditional colors */}
             {topFeatures?.map((entry, index) => (
               <Cell
