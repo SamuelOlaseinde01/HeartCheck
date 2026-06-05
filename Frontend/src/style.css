@@ -244,7 +244,6 @@ select:focus {
   color: white;
   margin: 10px;
   transition: 300ms;
-
 }
 
 .error-message {
@@ -257,4 +256,10 @@ select:focus {
   text-align: center;
   font-weight: bold;
   border: 1px solid #f5c2c7;
+}
+
+/* Removes the focus outline from Recharts wrappers and SVGs */
+.recharts-wrapper,
+.recharts-surface {
+  outline: none !important;
 }
