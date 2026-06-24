@@ -69,11 +69,10 @@ const FeatureImportanceChart = ({ data }) => {
             barSize={24}
             style={{ outline: "none" }}
           >
-            {/* Map over the data to assign conditional colors */}
             {topFeatures?.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={entry.value >= 0 ? "#10b981" : "#ef4444"} // Green for positive, Red for negative
+                fill={entry.value >= 0 ? "#10b981" : "#ef4444"}
               />
             ))}
           </Bar>

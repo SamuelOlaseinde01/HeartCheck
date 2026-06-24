@@ -115,10 +115,11 @@ def generate_clinical_explanation(patient_data_dict, risk_prob, max_retries=3):
                     return '{"summary": "Our AI coach is currently experiencing high traffic. Your baseline score is recorded.", "keep_it_up": ["Thank you for prioritizing your health."], "action_plan": ["Please try generating advice again later."]}'
             else:
                 raise e
+            
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "message": "Render is awake!"}
 
-# ==========================================
-# 5. THE MAIN API ENDPOINT
-# ==========================================
 # ==========================================
 # 5. THE MAIN API ENDPOINT
 # ==========================================
